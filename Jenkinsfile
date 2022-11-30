@@ -8,7 +8,7 @@ pipeline{
 
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         
-                          sh ' eksctl create cluster -f ./eks/eksctl_templet.yaml'
+                          sh ' eksctl upgrade cluster -f ./eks/eksctl_templet.yaml'
 
                      }
               
@@ -21,17 +21,9 @@ pipeline{
                 }
             }
         }
+
+        stage(" C")
     }
-    post{
-        always{
-            echo "========always========"
-        }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
-        }
-    }
+
 }
 

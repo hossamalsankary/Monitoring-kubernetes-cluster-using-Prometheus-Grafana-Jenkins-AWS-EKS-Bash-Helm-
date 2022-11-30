@@ -12,6 +12,4 @@ nodeGroups:
   - name: ng-2
     instanceType:  t2.micro
     desiredCapacity: 10
-  - name: ng-3
-    instanceType:  t2.micro
-    desiredCapacity: 15
+ 
