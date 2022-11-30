@@ -11,11 +11,11 @@ pipeline{
                         sh '''
                         if [[ $(aws eks list-clusters  --region=us-east-2) == *Monitoring-kubernetes-cluster* ]]
                         then
-                         echo"exists "
+                         echo "exists "
                          
-                          else
-                             eksctl create  cluster -f ./eks/eksctl_templet.yaml
-                          fi
+                        else
+                            eksctl create  cluster -f ./eks/eksctl_templet.yaml
+                        fi
 
                         '''
 
