@@ -8,7 +8,7 @@ pipeline{
 
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         
-                          sh ' eksctl upgrade cluster -f ./eks/eksctl_templet.yaml'
+                          sh ' eksctl upgrade --approve cluster -f ./eks/eksctl_templet.yaml'
 
                      }
               
