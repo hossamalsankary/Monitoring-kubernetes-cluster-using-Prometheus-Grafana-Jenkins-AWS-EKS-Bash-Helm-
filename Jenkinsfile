@@ -4,7 +4,7 @@ pipeline{
         stage("Create EKS cluster"){
             steps{
                 sh 'chmod +x -R ./bashScripts/CheckIfEksctlIsExist.sh  '
-                sh '  /bashScripts/CheckIfEksctlIsExist.sh '
+                sh '  ./bashScripts/CheckIfEksctlIsExist.sh '
                 sh ' eksctl create cluster -f ./eks/eksctl_templet.yaml'
             }
             post{
