@@ -14,18 +14,8 @@ pipeline{
               
             }
             
-            post{
-              
-           
-                failure{
-                    echo "========A execution failed========"
-                }
-            }
         }
-            stage("Install Helm"){
-                 sh 'chmod +x   ./bashScripts/get_helm.sh  '
-                sh ' if [[ $(./bashScripts/get_helm.sh ) == *already* ]];then echo "there" ; else ./get_helm.sh ;fi; '
-            }
+     
 
     
     }
