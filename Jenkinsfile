@@ -22,7 +22,7 @@ pipeline{
             }
         }
 
-        stage(" C")
+    
     }
 
 }
