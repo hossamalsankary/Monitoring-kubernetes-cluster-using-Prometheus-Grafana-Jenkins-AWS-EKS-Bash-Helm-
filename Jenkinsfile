@@ -28,7 +28,14 @@ pipeline{
           stage("Install Helm"){
         steps{
                  sh 'chmod +x   ./bashScripts/get_helm.sh  '
-                sh ' if [[ $(./bashScripts/get_helm.sh ) == *already* ]];then echo "there" ; else ./get_helm.sh ;fi; '
+                sh '''#!/bin/bash 
+                if [[ $(./bashScripts/get_helm.sh ) == *already* ]]
+                then
+                 echo "there" 
+                else 
+                 ./get_helm.sh 
+                fi
+                '''
 
         }
             }
