@@ -1,5 +1,5 @@
 #!/bin/bash
-  if [[ $(aws eks list-clusters  --region=us-east-2) == *Monitoring-kubernetes-cluster* ]]
+  if [[ $(aws eks list-clusters  --region=us-east-2) == *Monitoring-kubernetes-cluster-1* ]]
     then
         echo " Cluster exists "
         

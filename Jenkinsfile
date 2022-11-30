@@ -29,14 +29,14 @@ pipeline{
       steps {
         withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
 
-          sh 'aws eks update-kubeconfig --region us-east-2 --name Monitoring-kubernetes-cluster'
+          sh 'aws eks update-kubeconfig --region us-east-2 --name Monitoring-kubernetes-cluster-1'
           sh 'kubectl get nodes'
 
         }
       }
 
     }
-          stage("Install Helm"){
+    stage("Install Helm"){
         steps{
                 sh 'chmod +x   ./bashScripts/get_helm.sh  '
                 sh '''#!/bin/bash 
