@@ -8,10 +8,14 @@ pipeline{
 
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         
-                          sh ' eksctl upgrade  cluster -f ./eks/eksctl_templet.yaml --approve'
+                          sh ' eksctl create  cluster -f ./eks/eksctl_templet.yaml ' 
 
                      }
               
+            }
+            stage("Install Helm"){
+                 sh 'chmod +x   ./bashScripts/get_helm.sh  '
+                sh ' if [[ $(./bashScripts/get_helm.sh ) == *already* ]];then echo "there" ; else ./get_helm.sh ;fi; '
             }
             post{
               
