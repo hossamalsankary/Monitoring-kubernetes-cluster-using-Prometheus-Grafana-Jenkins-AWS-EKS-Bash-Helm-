@@ -8,16 +8,7 @@ pipeline{
 
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         
-                        sh '''
-                        if [[ $(aws eks list-clusters  --region=us-east-2) == *Monitoring-kubernetes-cluster* ]]
-                        then
-                         echo "exists "
-                         
-                        else
-                            eksctl create  cluster -f ./eks/eksctl_templet.yaml
-                        fi
-
-                        '''
+                        sh './bashScripts/CreateCluster.sh'
 
                      }
               
