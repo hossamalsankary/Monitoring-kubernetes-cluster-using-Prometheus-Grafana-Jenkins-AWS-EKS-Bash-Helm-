@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 function watchPods(){
 echo 'inidata' >  data
 echo 'inidata' > blue
