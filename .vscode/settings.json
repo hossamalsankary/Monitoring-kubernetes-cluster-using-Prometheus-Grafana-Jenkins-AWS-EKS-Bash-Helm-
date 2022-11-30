@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "kubernetes": "*.yaml",
+        "https://json.schemastore.org/yamllint.json": "file:///home/hoosam/Desktop/New%20Folder/eks/eksctl_templet.yaml"
+    }
+}
