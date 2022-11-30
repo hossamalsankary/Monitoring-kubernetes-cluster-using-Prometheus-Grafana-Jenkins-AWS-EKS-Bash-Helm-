@@ -1,10 +1,20 @@
 pipeline{
     agent any
     stages{
+
+        stage("Install Deplancey"){
+            steps{
+              
+
+                sh 'chmod +x -R ./bashScripts/CheckIfEksctlIsExist.sh  '
+                 sh 'chmod +x -R ./bashScripts/Installkubectl.sh '
+                 sh '  ./bashScripts/Installkubectl.sh '
+                sh '  ./bashScripts/CheckIfEksctlIsExist.sh '
+
+            }
+        }
         stage("Create EKS cluster"){
             steps{
-                sh 'chmod +x -R ./bashScripts/CheckIfEksctlIsExist.sh  '
-                sh '  ./bashScripts/CheckIfEksctlIsExist.sh '
 
                     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh 'chmod +x   ./bashScripts/CreateCluster.sh '
