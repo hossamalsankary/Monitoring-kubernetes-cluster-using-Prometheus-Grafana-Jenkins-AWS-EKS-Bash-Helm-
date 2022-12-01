@@ -22,17 +22,17 @@
  
  
 
-<img src="/images/1" alt="Permissions" />
-<img src="/images/2" alt="Permissions" />
-<img src="/images/3" alt="Permissions" />
-<img src="/images/4" alt="Permissions" />
-<img src="/images/5" alt="Permissions" />
-<img src="/images/6" alt="Permissions" />
-<img src="/images/7" alt="Permissions" />
-<img src="/images/8" alt="Permissions" />
-<img src="/images/9" alt="Permissions" />
-<img src="/images/10" alt="Permissions" />
-<img src="/images/11" alt="Permissions" />
-<img src="/images/12" alt="Permissions" />
-<img src="/images/13" alt="Permissions" />
-<img src="/images/14" alt="Permissions" />
+<img src="/images/1svg" alt="Permissions" />
+<img src="/images/1.png" alt="Permissions" />
+<img src="/images/3.png" alt="Permissions" />
+<img src="/images/4.png" alt="Permissions" />
+<img src="/images/5.png" alt="Permissions" />
+<img src="/images/6.png" alt="Permissions" />
+<img src="/images/7.png" alt="Permissions" />
+<img src="/images/8.png" alt="Permissions" />
+<img src="/images/9.png" alt="Permissions" />
+<img src="/images/10.png" alt="Permissions" />
+<img src="/images/11.png" alt="Permissions" />
+<img src="/images/12.png" alt="Permissions" />
+<img src="/images/13.png" alt="Permissions" />
+<img src="/images/14.png" alt="Permissions" />
