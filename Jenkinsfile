@@ -52,17 +52,22 @@ stage('create kubecontext file') {
 
      stage("Deploy Node app"){
         steps{
+                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+
           sh 'kubectl create namespace  blue-deployment 1>suceed 2>error'
             sh "kubectl apply -f ./k8s/deploy-node-app.yaml --namespace=blue"
+                }
         }
      }
 
      stage("Deploy prometheus server"){
         steps{
+            withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+
          sh 'helm repo add prometheus-community https://prometheus-community.github.io/helm-charts'
          sh 'helm repo update'
          sh '  helm install prometheus-server prometheus-community/kube-prometheus-stack --create-namespace '
-
+            }
         }
      }
 
