@@ -3,6 +3,7 @@
 ##### This repository is, essentially, a custom database deployed on a server, that can handle huge amounts of data. One Prometheus server can simultaneously monitor thousands of machines.
 ##### Built into Kubernetes – Prometheus works seamlessly with Kubernetes. Both Kubernetes and Prometheus are Cloud Native Computing Foundation (CNCF) projects and work seamlessly together (Prometheus is also bundled with Kubernetes).Query language and APIs – Prometheus provides APIs that enable convenient access to monitoring metrics.Many exporters and libraries – Prometheus offers a wide range of libraries and exporters for collecting application metrics.
 
+
 ## skills:
   -  Working in AWS EKS
   -  Using Jenkins to implement Continuous Integration and Continuous Deployment for k8s cluster and monitoring
@@ -21,7 +22,7 @@
  
 <img src="/images/1.svg" alt="Permissions" />
  
- 
+ [![Watch the video](https://raw.githubusercontent.com/hossamalsankary/Blue-green-deployment-using-CloudFormation-Kubernetes-Docker-AWS-EKS-and-Jenkins/main/images/Screenshot%20from%202022-11-24%2022-10-48.png)](https://www.youtube.com/watch?v=rZhBdeXahwk)
 
 
 ## pipeline
