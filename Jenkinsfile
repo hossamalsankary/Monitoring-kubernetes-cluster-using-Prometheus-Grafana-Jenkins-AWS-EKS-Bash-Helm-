@@ -54,8 +54,8 @@ stage('create kubecontext file') {
         steps{
                 withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
 
-          sh 'kubectl create namespace  blue-deployment 1>suceed 2>error'
-            sh "kubectl apply -f ./k8s/deploy-node-app.yaml --namespace=blue"
+               sh 'bash ./bashScripts/cheackForNameSpaces.sh'
+               sh "kubectl apply -f ./k8s/deploy-node-app.yaml --namespace=blue-deployment "
                 }
         }
      }
