@@ -93,6 +93,7 @@ stage('create kubecontext file') {
         }
     }
     
+    }
     post{
         failure{
             withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
@@ -102,7 +103,6 @@ stage('create kubecontext file') {
                 sh ' kubectl delete svc grafana-server   --namespace prometheus-namespace '
             }
         }
-    }
     }
 
 }
