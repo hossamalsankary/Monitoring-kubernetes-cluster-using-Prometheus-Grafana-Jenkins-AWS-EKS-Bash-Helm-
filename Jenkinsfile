@@ -85,14 +85,24 @@ stage('create kubecontext file') {
 
     stage("get the service"){
         steps{
+            withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
 
     sh 'kubectl get svc prometheus-service --namespace prometheus-namespace'
     sh 'kubectl get svc prometheus-service --namespace grafana-server'
-
+            }
         }
     }
     
-    
+    post{
+        failure{
+            withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+
+                sh ' helm uninstall prometheus-server --namespace prometheus-namespace '
+                sh ' kubectl delete svc server   --namespace prometheus-namespace '
+                sh ' kubectl delete svc grafana-server   --namespace prometheus-namespace '
+            }
+        }
+    }
     }
 
 }
