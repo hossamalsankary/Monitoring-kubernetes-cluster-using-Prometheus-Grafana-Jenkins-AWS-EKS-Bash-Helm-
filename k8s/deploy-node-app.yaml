@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: blue
+  name: blue
+  namespace: blue-deployment
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blue
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: blue
+    spec:
+      containers:
+      - image: hossamalsankary/nodejs_app:49
+        name: blue
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blueservice
+  namespace: blue-deployment
+spec:
+  selector:
+     app: blue
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: LoadBalancer
