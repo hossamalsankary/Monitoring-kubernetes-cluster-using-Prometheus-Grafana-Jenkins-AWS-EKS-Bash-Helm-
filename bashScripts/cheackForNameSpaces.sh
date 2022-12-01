@@ -23,7 +23,7 @@ echo " prometheus-namespace is exists "
 else
 echo  " prometheus-namespace "
 kubectl create namespace  prometheus-namespace
-
+ 
 fi 
 
 

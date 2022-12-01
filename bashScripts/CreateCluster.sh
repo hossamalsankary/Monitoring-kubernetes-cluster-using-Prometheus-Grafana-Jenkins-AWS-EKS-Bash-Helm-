@@ -6,3 +6,4 @@
     else
         eksctl create  cluster -f ./eks/eksctl_templet.yaml
     fi
+ 
