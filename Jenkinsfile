@@ -66,7 +66,7 @@ stage('create kubecontext file') {
 
          sh 'helm repo add prometheus-community https://prometheus-community.github.io/helm-charts'
          sh 'helm repo update'
-         sh '  helm install prometheus-server prometheus-community/kube-prometheus-stack --create-namespace prometheus-namespace '
+         sh '  helm install prometheus-server prometheus-community/kube-prometheus-stack --namespace prometheus-namespace '
             }
         }
      }
