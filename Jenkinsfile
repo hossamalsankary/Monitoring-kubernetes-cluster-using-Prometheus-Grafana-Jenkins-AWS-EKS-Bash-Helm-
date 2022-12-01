@@ -49,16 +49,10 @@ stage('create kubecontext file') {
                 '''
           }
      }
-    stage("Create prod namespaces"){
-        steps{
-         sh 'kubectl create namespace blue 1>suceed 2>error'
-         sh 'kubectl create namespace prometheus 1>suceed 2>error'
-         
-        }
-    }
+
      stage("Deploy Node app"){
         steps{
-
+          sh 'kubectl create namespace  blue-deployment 1>suceed 2>error'
             sh "kubectl apply -f ./k8s/deploy-node-app.yaml --namespace=blue"
         }
      }
