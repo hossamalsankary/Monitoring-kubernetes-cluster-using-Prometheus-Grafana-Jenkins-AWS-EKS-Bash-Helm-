@@ -1,4 +1,5 @@
 
+<img src="/images/1.svg" alt="Permissions" />
 ## skills:
   -  Working in AWS EKS
   -  Using Jenkins to implement Continuous Integration and Continuous Deployment for k8s cluster and monitoring
@@ -21,9 +22,8 @@
  
  
 
-<img src="/images/1.svg" alt="Permissions" />
 
-## pipline
+## pipeline
 ```diff 
 pipeline {
   agent any
