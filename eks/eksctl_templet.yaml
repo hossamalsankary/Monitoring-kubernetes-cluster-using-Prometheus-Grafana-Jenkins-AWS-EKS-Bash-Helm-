@@ -1,6 +1,5 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
-
 metadata:
   name: Monitoring-kubernetes-cluster-1
   region: us-east-2
