@@ -1,7 +1,7 @@
 
-
-###### This repository is, essentially, a custom database deployed on a server, that can handle huge amounts of data. One Prometheus server can simultaneously monitor thousands of machines.
-###### Built into Kubernetes – Prometheus works seamlessly with Kubernetes. Both Kubernetes and Prometheus are Cloud Native Computing Foundation (CNCF) projects and work seamlessly together (Prometheus is also bundled with Kubernetes).Query language and APIs – Prometheus provides APIs that enable convenient access to monitoring metrics.Many exporters and libraries – Prometheus offers a wide range of libraries and exporters for collecting application metrics.
+## Monitoring kubernetes-cluster using prometheu, grafana, Jenkins, AWS, EKS, Helm
+##### This repository is, essentially, a custom database deployed on a server, that can handle huge amounts of data. One Prometheus server can simultaneously monitor thousands of machines.
+##### Built into Kubernetes – Prometheus works seamlessly with Kubernetes. Both Kubernetes and Prometheus are Cloud Native Computing Foundation (CNCF) projects and work seamlessly together (Prometheus is also bundled with Kubernetes).Query language and APIs – Prometheus provides APIs that enable convenient access to monitoring metrics.Many exporters and libraries – Prometheus offers a wide range of libraries and exporters for collecting application metrics.
 
 ## skills:
   -  Working in AWS EKS
