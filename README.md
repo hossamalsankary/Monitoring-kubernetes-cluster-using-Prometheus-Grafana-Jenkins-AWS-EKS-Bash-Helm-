@@ -22,7 +22,7 @@
  
  
 
-<img src="/images/1svg" alt="Permissions" />
+<img src="/images/1.svg" alt="Permissions" />
 <img src="/images/1.png" alt="Permissions" />
 <img src="/images/3.png" alt="Permissions" />
 <img src="/images/4.png" alt="Permissions" />
