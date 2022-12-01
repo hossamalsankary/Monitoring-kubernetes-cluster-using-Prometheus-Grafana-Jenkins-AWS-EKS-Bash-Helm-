@@ -38,15 +38,15 @@ stage('create kubecontext file') {
     }
     stage("Install Helm"){
         steps{
-                sh 'chmod +x   ./bashScripts/get_helm.sh  '
-                sh '''#!/bin/bash 
-                if [[ $(./bashScripts/get_helm.sh ) == *already* ]]
-                then
-                 echo "there" 
-                else 
-                 ./get_helm.sh 
-                fi
-                '''
+         sh 'chmod +x   ./bashScripts/get_helm.sh  '
+        sh '''#!/bin/bash 
+        if [[ $(./bashScripts/get_helm.sh ) == *already* ]]
+        then
+            echo "there" 
+        else 
+            ./get_helm.sh 
+        fi
+        '''
           }
      }
 
@@ -70,7 +70,28 @@ stage('create kubecontext file') {
             }
         }
      }
+    stage("expose prometheus and grafana "){
+        steps{
+            withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
 
+         sh '''
+        kubectl expose deployment prometheus-server-grafana  --type=LoadBalancer --port=3000 --name=grafana-server --namespace prometheus-namespace 
+        kubectl expose pod prometheus-prometheus-server-kube-pro-prometheus-0  --type=LoadBalancer --port=9090 --name=prometheus-service --namespace prometheus-namespace
+         
+         '''
+            }
+        }
+     }
+
+    stage("get the service"){
+        steps{
+
+    sh 'kubectl get svc prometheus-service --namespace prometheus-namespace'
+    sh 'kubectl get svc prometheus-service --namespace grafana-server'
+
+        }
+    }
+    
     
     }
 
