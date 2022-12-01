@@ -22,7 +22,7 @@
  
 <img src="/images/1.svg" alt="Permissions" />
  
- [![Watch the video](https://raw.githubusercontent.com/hossamalsankary/Blue-green-deployment-using-CloudFormation-Kubernetes-Docker-AWS-EKS-and-Jenkins/main/images/Screenshot%20from%202022-11-24%2022-10-48.png)](https://www.youtube.com/watch?v=rZhBdeXahwk)
+ [![Watch the video](https://raw.githubusercontent.com/hossamalsankary/Monitoring-kubernetes-cluster-using-prometheu-grafana-Jenkins-AWS-EKS-Helm/main/images/sec.png)](https://www.youtube.com/watch?v=rZhBdeXahwk)
 
 
 ## pipeline
